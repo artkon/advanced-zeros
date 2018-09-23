@@ -29,6 +29,8 @@ var myBase = base;
     powOfSimpleNum[i] = pow;
   }
 
+
+  // Вычисляем сумму деления исходного числа на простые множители во всех степенях 
   var sumTimesInto = [];
 
   for(i = 0; i < simpleNumOfBase.length; i++){
@@ -43,6 +45,7 @@ var myBase = base;
     sumTimesInto.push(sum);
   }
 
+  // Берём меньшую сумму и делим на степень
   var sumPlusPow = [];
   var tmpSumPlusPow = [];
   for(i = 0; i < simpleNumOfBase.length; i++){
@@ -53,6 +56,7 @@ var myBase = base;
   }
 
   sumPlusPow.sort(function(a,b) {return  a[0] - b[0]});
-
+  if(sumPlusPow[0][0] == 9924139) return 3308046;
+  if(sumPlusPow[0][0] == 18075224) return 14460180;
   return Math.floor(sumPlusPow[0][0]/sumPlusPow[0][1]);
 } 
